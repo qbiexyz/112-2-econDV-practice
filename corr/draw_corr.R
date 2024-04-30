@@ -2,8 +2,6 @@ library(readxl)
 library(tidyverse)
 library(lavaan)
 library(magrittr)
-library(corrplot)
-
 
 # 讀資料 ----
 ## 先預處理
@@ -41,8 +39,8 @@ corr1.1 %>%
              shape = "circle", stroke = 0.5) +
   labs(x = NULL, y = NULL, 
        col = "",
-       title ="睡眠問題與正/負面情緒之相關係數圖", 
-       subtitle = "睡眠問題(Sleep Problems, SP)、正面情緒(Positive Affect, PA)、負面情緒(Negative Affect, NA)\n時間範圍:從國一開始(以多數13歲為代表)，包含青少年到成人初期(13y ~ 30y)。", 
+       title ="青少年到成人初期的睡眠問題與正/負面情緒之相關係數圖", 
+       subtitle = "睡眠問題(Sleep Problems, SP)、正面情緒(Positive Affect, PA)、負面情緒(Negative Affect, NA)\n時間範圍從國一開始(以多數13歲為代表)，包含青少年到成人初期(13y ~ 30y)。", 
        caption = "(空白格為不顯著)，資料來源:臺灣青少年成長歷程研究國一樣本青少年到成人初期，共9波追蹤資料") +
   theme_classic()+
   scale_color_gradient2(mid = "#FBFEF9",low = "#A63446",high = "#0C6291", 
