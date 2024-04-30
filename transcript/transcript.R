@@ -18,36 +18,35 @@ transcript_c <- transcript |>
   transform(
     semester = factor(
       semester,
-      levels = c("freshman", "sophomore", 
-                 "junior", "senior")
+      levels = c("大一", "大二", 
+                 "大三", "大四")
     ),
     suject_type = factor(
       suject_type,
-      levels = c("Research Methods", "Programming",
-                 "Data Science", "Sociology and Others")
+      levels = c("調查方法專業", "資料程式設計專業",
+                 "資料科學專業", "社會學或其他專業")
     )
   )
 
-transcript_c$suject_type <- 
-  fct_relevel(transcript_c$suject_type,
-              "Wheat","Maize (corn)")
+write.csv(transcript_c, file = "transcript/transcript2.csv"
+          , row.names = F, fileEncoding = "Big5")
 
-
+ 
 # 文字相關整理 ----
 
-title<-"成績單"
-sub<-"Each square is a country, colored according to continent:<br><b><span style='color:#FFC43D;'>Africa</span></b>, <b><span style='color:#F0426B;'>Asia</span></b>, <b><span style='color:#5A4FCF;'>Europe</span></b>, <b><span style='color:#059E75;'>Central and North America</span></b>, <b><span style='color:#06D6A0;'>South America</span></b> or <b><span style='color:#F68EA6;'>Oceania</span>. "
+title<-"大學修課紀錄"
+sub<-"每個方格代表一個科目<br><b>科目類別:<span style='color:#FFD06F;'>社會學或其他專業</span></b>、<br><b><b><b><b><b><b><span style='color:#376795;'>資料科學專業</span></b>、<span style='color:#72BCD5;'>資料程式設計專業</span></b>、<span style='color:#84A8CA;'>調查方法專業</span></b><br><b>方格邊框顏色:<span style='color:#9A3A3A;'>成績在A以上</span></b><br><b>"
 
 pal_fill <- c(
-  "Sociology and Others" = "#FFD06F", "Data Science" = "#376795",
-  "Programming" = "#72BCD5", "Research Methods" = "#84A8CA",
+  "社會學或其他專業" = "#FFD06F", " 資料科學專業" = "#376795",
+  "資料程式設計專業" = "#72BCD5", "調查方法專業" = "#84A8CA",
   # Set alpha to 0 to hide 'z'
   'z'=alpha('white',0)
 )
 
 pal_color <- c(
-  "Sociology and Others" = "white", "Data Science" = "white",
-  "Programming" = "white", "Research Methods" = "white",
+  "社會學或其他專業" = "white", " 資料科學專業" = "white",
+  "資料程式設計專業" = "white", "調查方法專業" = "white",
   # Set alpha to 0 to hide 'z'
   'z'=alpha('white',0)
 )
@@ -88,7 +87,10 @@ p2 <- p1 +
     axis.text.y = element_blank(),
     axis.ticks = element_blank(),
     strip.background.x = element_rect(fill="white"),
-    strip.background.y = element_rect(fill="dimgrey"),
+    strip.background.y = element_rect(fill="white"),
     strip.text.y = element_text(color="white")
   )
 p2
+
+
+
