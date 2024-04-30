@@ -5,7 +5,7 @@ library(showtext)
 library(sysfonts)
 
 # Read Data ----
-transcript <- read_csv('transcript/transcript.csv')
+transcript <- read_csv('30 practice/transcript/transcript.csv')
 
 glimpse(transcript)
 
@@ -31,7 +31,7 @@ subject_colors <- c("社會學或其他專業" = "#FFD06F",
                     "調查方法專業" = "#84A8CA")
 
 # Set Font to Microsoft JhengHei ----
-font_add("microsoftjhenghei", "transcript/microsoftjhenghei.ttf")
+font_add("microsoftjhenghei", "30 practice/transcript/microsoftjhenghei.ttf")
 showtext_auto()
 
 # Plotting ----

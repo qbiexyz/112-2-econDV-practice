@@ -5,7 +5,7 @@ library(magrittr)
 
 # 讀資料 ----
 ## 先預處理
-corr1 <- read_excel("corr/corr.xlsx", 
+corr1 <- read_excel("30 practice/corr/corr.xlsx", 
                    sheet = "xyz3")
 
 cor_nm <- colnames(corr1)[-1]

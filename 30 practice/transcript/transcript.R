@@ -9,7 +9,7 @@ library(sf)
 library(readr)
 
 # 數據讀取、整理----
-transcript <- read_csv('transcript/transcript.csv')
+transcript <- read_csv('30 practice/transcript/transcript.csv')
 
 glimpse(transcript)
 
@@ -28,7 +28,7 @@ transcript_c <- transcript |>
     )
   )
 
-write.csv(transcript_c, file = "transcript/transcript2.csv"
+write.csv(transcript_c, file = "30 practice/transcript/transcript2.csv"
           , row.names = F, fileEncoding = "Big5")
 
  
